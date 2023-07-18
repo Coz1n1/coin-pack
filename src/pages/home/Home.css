@@ -1,0 +1,76 @@
+.home-start-screen {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home-start-screen-header {
+  font-size: 90pt;
+  letter-spacing: 10px;
+  font-weight: bold;
+  z-index: 99;
+}
+
+.home-start-screen-coin-fast {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  animation: coin 2s infinite;
+}
+
+.home-start-screen-coin-fast-second {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  animation: coin 2s infinite;
+}
+
+.home-start-screen-coin-slow {
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  animation: coin 4s infinite;
+}
+
+.home-start-screen-coin-slow-second {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  animation: coin 4s infinite;
+}
+
+.home-start-screen-coin-details-small {
+  width: 35px;
+}
+
+@keyframes coin {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.home-start-screen-coin-details {
+  width: 50px;
+}
+
+.coins-display {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.coin-container {
+  display: flex;
+  width: 80vw;
+  justify-content: space-between;
+  align-items: center;
+  background-color: green;
+}

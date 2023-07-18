@@ -1,0 +1,51 @@
+.nav-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.nav-company {
+    flex: 1;
+    padding: 0 100px;
+}
+
+.nav-company-header {
+    font-family: 'Lumanosimo', cursive;
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+.nav-links-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.nav-container-element {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+.nav-container-element:hover {
+    color: blue;
+}
+
+.nav-socials {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.nav-socials-icon {
+    padding: 0 10px;
+    cursor: pointer;
+}
