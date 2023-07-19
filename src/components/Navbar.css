@@ -1,51 +1,51 @@
 .nav-container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
 }
 
 .nav-company {
-    flex: 1;
-    padding: 0 100px;
+  flex: 1;
+  padding: 0 100px;
 }
 
 .nav-company-header {
-    font-family: 'Lumanosimo', cursive;
-    font-size: 22pt;
-    font-weight: bold;
+  font-family: "Lumanosimo", cursive;
+  font-size: 22pt;
+  font-weight: bold;
 }
 
 .nav-links-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
 .nav-container-element {
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 15pt;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15pt;
 }
 
 .nav-container-element:hover {
-    color: blue;
+  color: #fa7268;
 }
 
 .nav-socials {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 100px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 100px;
 }
 
 .nav-socials-icon {
-    padding: 0 10px;
-    cursor: pointer;
+  padding: 0 10px;
+  cursor: pointer;
 }
