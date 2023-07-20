@@ -5,6 +5,8 @@
   align-items: center;
   position: fixed;
   z-index: 100;
+  background-color: #001220;
+  height: 80px;
 }
 
 .nav-company {

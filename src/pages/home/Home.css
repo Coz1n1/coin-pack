@@ -95,7 +95,7 @@
   width: 80vw;
   justify-content: space-between;
   align-items: center;
-  background-color: #032845;
+  background-color: #001220;
   height: 100px;
 }
 
@@ -104,20 +104,20 @@
   width: 80vw;
   justify-content: space-between;
   align-items: center;
-  background-color: #f1a49e;
+  background-color: #022139;
   height: 100px;
 }
 
 .coin-info-odd {
   width: 100%;
-  background-color: #f1a49e;
+  background-color: #022139;
   text-align: center;
 }
 
 .coin-info {
   width: 100%;
   text-align: center;
-  background-color: #032845;
+  background-color: #001220;
 }
 
 .coin-element {
@@ -209,4 +209,102 @@
 .red {
   color: red;
   background-color: transparent;
+}
+
+.coins-display-header {
+  width: 80vw;
+  background-color: #fa7268;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.coins-display-header-input {
+  width: 350px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12pt;
+  color: black;
+  height: 50px;
+}
+
+.coins-display-select-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px;
+  flex: 1;
+}
+
+.coins-display-select {
+  color: black;
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12pt;
+  margin-left: 10px;
+}
+
+.coins-display-select-option {
+  color: black;
+}
+
+.coins-display-input-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coins-display-description-wrapper {
+  width: 80vw;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #001220;
+}
+
+.coins-display-top-wrapper {
+  display: flex;
+  height: 80px;
+  filter: drop-shadow(0 -3mm 7mm rgba(255, 255, 255, 0.2));
+}
+
+.coins-display-description-header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 15pt;
+  font-weight: bold;
+  background-color: #001220;
+}
+
+.coins-display-description-header-big {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  font-size: 15pt;
+  font-weight: bold;
+  background-color: #001220;
+}
+
+.coin-element-big {
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

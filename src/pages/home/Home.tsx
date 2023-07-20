@@ -1,49 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Axios from "axios";
-import { useIntersectionObserver } from "usehooks-ts";
 import "./Home.css";
 import { Coin } from "./Coin";
 
 export const Home = () => {
-  const [isIntersecting, setIsIntersecting] = useState<boolean>(false);
-  const ref = useRef<HTMLDivElement | null>(null);
-  const entry = useIntersectionObserver(ref, {});
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       setIsIntersecting(entry.isIntersecting);
-  //     },
-  //     {
-  //       rootMargin: "-200px",
-  //     }
-  //   );
-  //   console.log(isIntersecting);
-  //   observer.observe(ref.current);
-  //   return () => observer.disconnect();
-  // }, [isIntersecting]);
-
-  // useEffect(() => {
-  //   if (isIntersecting) {
-  //     ref.current.querySelectorAll(".fade-in").forEach((el: any) => {
-  //       el.classList.add("appear");
-  //     });
-  //   }
-  // }, [isIntersecting]);
+  const [value, setValue] = useState<number>(20);
+  const [filter, setFilter] = useState<string>("");
 
   const {
     data: cryptoData,
     isLoading,
     isError,
   } = useQuery(["crypto"], () => {
-    return Axios.get(
-      "https://api.coinstats.app/public/v1/coins?skip=0&limit=100"
-    ).then((res) => {
-      const result = res.data.coins;
-      console.log(res.data.coins);
-      return result;
-    });
+    return Axios.get("https://api.coinstats.app/public/v1/coins?skip=0").then(
+      (res) => {
+        const result = res.data.coins;
+        console.log(res.data.coins);
+        return result;
+      }
+    );
   });
 
   if (isLoading) {
@@ -53,6 +29,19 @@ export const Home = () => {
   if (isError) {
     return <h1>Error</h1>;
   }
+
+  const handleChange = (e: { target: { value: any } }) => {
+    parseInt(e.target.value);
+    setValue(e.target.value);
+  };
+
+  const handleFilter = (e: { target: { value: string } }) => {
+    setFilter(e.target.value);
+  };
+
+  const filtered = cryptoData.filter((coin: any) => {
+    return coin.name.toLowerCase().includes(filter);
+  });
 
   return (
     <div>
@@ -160,15 +149,56 @@ export const Home = () => {
           ></path>
         </svg>
       </div>
-      <div ref={ref}>
+      <div>
         <div className="coins-display fade-in">
-          {cryptoData.map((coin: any, i: number) => (
+          <div className="coins-display-header">
+            <div className="coins-display-top-wrapper">
+              <div className="coins-display-input-wrapper">
+                <input
+                  type="text"
+                  placeholder="Name..."
+                  className="coins-display-header-input"
+                  onChange={handleFilter}
+                />
+              </div>
+              <div className="coins-display-select-wrapper">
+                <label htmlFor="size-select">Size:</label>
+                <select
+                  name="size"
+                  id="size-select"
+                  className="coins-display-select"
+                  onChange={handleChange}
+                >
+                  <option value="20" className="coins-display-select-option">
+                    20
+                  </option>
+                  <option value="40" className="coins-display-select-option">
+                    40
+                  </option>
+                  <option value="60" className="coins-display-select-option">
+                    60
+                  </option>
+                  <option value="100" className="coins-display-select-option">
+                    100
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div className="coins-display-description-wrapper">
+              <div className="coins-display-description-header-big">Coin</div>
+              <div className="coins-display-description-header">Price</div>
+              <div className="coins-display-description-header">24h change</div>
+            </div>
+          </div>
+
+          {filtered.slice(0, value).map((coin: any, i: number) => (
             <Coin
               name={coin.name}
               price={coin.price}
               icon={coin.icon}
               change={coin.priceChange1d}
               index={i}
+              websiteURL={coin.websiteUrl}
               key={i}
             />
           ))}
