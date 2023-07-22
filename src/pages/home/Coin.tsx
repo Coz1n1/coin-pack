@@ -1,6 +1,5 @@
 import { CaretRight } from "@phosphor-icons/react";
 import { FC } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface Props {
   name: string;
@@ -9,6 +8,7 @@ interface Props {
   change: number;
   index: number;
   websiteURL: string;
+  marketCap: number;
 }
 
 export const Coin: FC<Props> = ({
@@ -18,25 +18,40 @@ export const Coin: FC<Props> = ({
   change,
   index,
   websiteURL,
+  marketCap,
 }) => {
   return (
     <div className={index % 2 ? "coin-container-odd" : "coin-container"}>
-      <div className="coin-element-big">
+      <div className="coin-element">
         <div className="icon-content">
-          <img src={icon} alt="" />
-          <a href={websiteURL} target="_blank" rel="noreferrer">
-            <CaretRight size={32} color="white" />
+          <img src={icon} alt="" className="coin-icon" />
+          <a
+            href={websiteURL}
+            target="_blank"
+            rel="noreferrer"
+            className="coin-link"
+          >
+            <CaretRight size={34} color="#fa7268" />
+            <span className={index % 2 ? "coin-info-odd" : "coin-info"}>
+              {name}
+            </span>
           </a>
-          <h1 className={index % 2 ? "coin-info-odd" : "coin-info"}>{name}</h1>
         </div>
       </div>
       <div className="coin-element">
-        <h1 className={index % 2 ? "coin-info-odd" : "coin-info"}>{price} $</h1>
+        <span className={index % 2 ? "coin-info-odd" : "coin-info"}>
+          {price} $
+        </span>
       </div>
       <div className="coin-element">
-        <h1 className={index % 2 ? "coin-info-odd" : "coin-info"}>
+        <span className={index % 2 ? "coin-info-odd" : "coin-info"}>
+          {marketCap} $
+        </span>
+      </div>
+      <div className="coin-element">
+        <span className={index % 2 ? "coin-info-odd" : "coin-info"}>
           <span className={change < 0 ? "red" : "green"}>{change}%</span>
-        </h1>
+        </span>
       </div>
     </div>
   );

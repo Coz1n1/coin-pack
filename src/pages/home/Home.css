@@ -112,12 +112,16 @@
   width: 100%;
   background-color: #022139;
   text-align: center;
+  font-size: 15pt;
+  font-weight: bold;
 }
 
 .coin-info {
   width: 100%;
   text-align: center;
   background-color: #001220;
+  font-size: 15pt;
+  font-weight: bold;
 }
 
 .coin-element {
@@ -125,6 +129,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.coin-element:first-child {
+  justify-content: flex-start;
+}
+
+.coin-element:last-child {
+  justify-content: flex-end;
 }
 
 .svg-element {
@@ -291,20 +303,95 @@
   background-color: #001220;
 }
 
-.coins-display-description-header-big {
-  flex: 2;
-  display: flex;
-  align-items: center;
+.coins-display-description-header:first-child {
   justify-content: flex-start;
-  height: 100%;
-  font-size: 15pt;
-  font-weight: bold;
-  background-color: #001220;
 }
 
-.coin-element-big {
-  flex: 2;
+.coin-icon {
+  width: 50px;
+}
+
+.coin-link {
   display: flex;
-  justify-content: flex-start;
+  text-decoration: none;
+  cursor: pointer;
   align-items: center;
+}
+
+/* Community Section Styling */
+.community-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.community-header {
+  font-size: 42pt;
+  font-weight: bold;
+}
+
+.community-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.community-image-props {
+  width: 500px;
+}
+
+.community-top-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.community-bottom-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.community-bottom-image-props {
+  width: 130px;
+}
+
+.community-bottom-section-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.community-button {
+  width: 200px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #001220;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.community-top-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.community-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.community-top-element {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  text-align: center;
+}
+
+.community-top-element-text {
+  font-size: 15pt;
+  font-weight: bold;
+  margin-top: 40px;
 }

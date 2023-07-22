@@ -3,9 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import Axios from "axios";
 import "./Home.css";
 import { Coin } from "./Coin";
+import { CommunitySection } from "./CommunitySection";
+import { Footer } from "../../components/Footer";
 
 export const Home = () => {
-  const [value, setValue] = useState<number>(20);
+  const [value, setValue] = useState<number>(10);
   const [filter, setFilter] = useState<string>("");
 
   const {
@@ -169,6 +171,9 @@ export const Home = () => {
                   className="coins-display-select"
                   onChange={handleChange}
                 >
+                  <option value="10" className="coins-display-select-option">
+                    10
+                  </option>
                   <option value="20" className="coins-display-select-option">
                     20
                   </option>
@@ -185,8 +190,9 @@ export const Home = () => {
               </div>
             </div>
             <div className="coins-display-description-wrapper">
-              <div className="coins-display-description-header-big">Coin</div>
+              <div className="coins-display-description-header">Coin</div>
               <div className="coins-display-description-header">Price</div>
+              <div className="coins-display-description-header">MarketCap</div>
               <div className="coins-display-description-header">24h change</div>
             </div>
           </div>
@@ -194,16 +200,19 @@ export const Home = () => {
           {filtered.slice(0, value).map((coin: any, i: number) => (
             <Coin
               name={coin.name}
-              price={coin.price}
+              price={Math.round(coin.price)}
               icon={coin.icon}
               change={coin.priceChange1d}
               index={i}
               websiteURL={coin.websiteUrl}
+              marketCap={Math.round(coin.marketCap)}
               key={i}
             />
           ))}
         </div>
       </div>
+      <CommunitySection />
+      <Footer />
     </div>
   );
 };
