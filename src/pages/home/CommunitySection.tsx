@@ -2,7 +2,7 @@ import React from "react";
 
 export const CommunitySection = () => {
   return (
-    <div className="community-container">
+    <div className="community-container" id="community">
       <div className="community-wrapper">
         <div className="community-top-section">
           <div className="community-top-header">

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Axios from "axios";
 import "./Home.css";
 import { Coin } from "./Coin";
 import { CommunitySection } from "./CommunitySection";
 import { Footer } from "../../components/Footer";
+import { Contact } from "./Contact";
+import { ChartSection } from "./Chart";
 
 export const Home = () => {
   const [value, setValue] = useState<number>(10);
@@ -37,7 +39,7 @@ export const Home = () => {
     setValue(e.target.value);
   };
 
-  const handleFilter = (e: { target: { value: string } }) => {
+  const handleFilter = (e: ChangeEvent<HTMLInputElement>) => {
     setFilter(e.target.value);
   };
 
@@ -47,7 +49,7 @@ export const Home = () => {
 
   return (
     <div>
-      <div className="home-start-screen">
+      <div className="home-start-screen" id="home">
         <div className="home-start-screen-container">
           <span className="home-start-screen-header">Coinpack</span>
           <p className="home-start-screen-paragraph">
@@ -151,8 +153,13 @@ export const Home = () => {
           ></path>
         </svg>
       </div>
+      <div className="chart-wrapper">
+        <div className="chart-section" id="market">
+          <ChartSection data={cryptoData} />
+        </div>
+      </div>
       <div>
-        <div className="coins-display fade-in">
+        <div className="coins-display">
           <div className="coins-display-header">
             <div className="coins-display-top-wrapper">
               <div className="coins-display-input-wrapper">
@@ -212,6 +219,27 @@ export const Home = () => {
         </div>
       </div>
       <CommunitySection />
+      <svg
+        id="visual"
+        viewBox="0 0 2000 800"
+        width="2000"
+        height="800"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        className="contact-svg"
+      >
+        <rect x="0" y="0" width="2000" height="800" fill="#001220"></rect>
+        <g fill="#fa7268">
+          <circle r="228" cx="1731" cy="472"></circle>
+          <circle r="100" cx="1093" cy="609"></circle>
+          <circle r="110" cx="365" cy="653"></circle>
+          <circle r="122" cx="19" cy="274"></circle>
+          <circle r="153" cx="1376" cy="153"></circle>
+          <circle r="111" cx="625" cy="135"></circle>
+        </g>
+      </svg>
+      <Contact />
       <Footer />
     </div>
   );

@@ -33,6 +33,7 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 15pt;
+  cursor: pointer;
 }
 
 .nav-container-element:hover {
