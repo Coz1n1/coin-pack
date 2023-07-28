@@ -1,4 +1,4 @@
-Published Project
+Published Project :)
 https://profound-cendol-530796.netlify.app/
 
 # Getting Started with Create React App
