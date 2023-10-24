@@ -407,6 +407,7 @@ body {
 
 .contact-svg {
   position: absolute;
+  overflow-x: hidden;
 }
 
 .contact-content {
@@ -501,6 +502,10 @@ body {
   .community-top-element-text {
     font-size: 13pt;
   }
+
+  .home-start-screen-coin-fast-second {
+    top: 60%;
+  }
 }
 
 @media screen and (max-width: 630px) {
@@ -509,7 +514,7 @@ body {
   }
 
   .coins-display-description-header {
-    font-size: 13pt;
+    font-size: 11pt;
   }
 
   .home-start-screen-paragraph {
@@ -521,11 +526,11 @@ body {
   }
 
   .coins-display-header {
-    width: 100%;
+    width: 90%;
   }
 
   .coins-display-header-input {
-    width: 250px;
+    width: 200px;
   }
 
   .coins-display-description-wrapper {
@@ -533,21 +538,21 @@ body {
   }
 
   .coin-container {
-    width: 100%;
+    width: 90%;
   }
 
   .coin-container-odd {
-    width: 100%;
+    width: 90%;
   }
   .coin-info {
-    font-size: 12pt;
+    font-size: 8pt;
   }
 
   .coin-icon {
     width: 35px;
   }
   .coin-info-odd {
-    font-size: 12pt;
+    font-size: 8pt;
   }
 
   .community-header {
